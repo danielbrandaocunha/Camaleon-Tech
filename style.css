@@ -1,0 +1,153 @@
+/* Fundo geral */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Menu lateral */
+/* Menu superior centralizado */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  z-index: 1000;
+}
+
+.topbar ul {
+  display: flex;
+  gap: 40px; /* espaço entre os botões */
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.topbar ul li a {
+  color: #fff; /* cor branca */
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.topbar ul li a:hover {
+  color: #9b59b6; /* efeito hover opcional */
+}
+
+/* Conteúdo principal */
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  width: 100%;
+}
+
+/* Texto da esquerda */
+.content {
+  max-width: 500px;
+}
+
+.brand {
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: #9b59b6;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 20px 0;
+}
+
+p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Carro */
+.car-container {
+  text-align: center;
+  max-width: 600px;
+}
+
+.car-container img {
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.buttons {
+  margin-top: 50px;
+}
+
+.buttons button {
+  padding: 15px 30px;   /* Aumenta altura e largura do botão */
+  margin: 12px;
+  margin-top: -50px;
+  border: none;
+  border-radius: 8px;   /* Bordas levemente maiores */
+  background: linear-gradient(90deg, #3a9bdc, #9a3adc);
+  color: white;
+  font-size: 18px;      /* Texto maior */
+  font-weight: bold;    /* Texto mais destacado */
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.buttons button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* efeito hover mais elegante */
+}
+
+.sobre-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  padding: 60px;
+  text-align: center;
+}
+
+.sobre-page h1 {
+  font-size: 40px;
+  color: #9b59b6;
+  margin-bottom: 30px;
+}
+
+.sobre-page p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 10px 0;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.sobre-page .btn {
+  margin-top: 30px;
+}
