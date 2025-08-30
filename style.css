@@ -151,3 +151,156 @@ p {
 .sobre-page .btn {
   margin-top: 30px;
 }
+/* Estilos para telas menores (celular) */
+@media (max-width: 768px) {
+
+  main {
+    flex-direction: column; /* Coloca a imagem do carro abaixo do texto */
+    padding: 60px 20px 20px 20px;
+  }
+
+  .content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 32px; /* Ajusta tamanho do título */
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .car-container {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .buttons button {
+    padding: 12px 25px; /* Ajusta tamanho dos botões no celular */
+    font-size: 16px;
+    margin: 8px;
+  }
+
+  .topbar ul {
+    gap: 20px; /* diminui espaço entre os botões do menu */
+    padding: 15px 0;
+  }
+
+  .topbar ul li a {
+    font-size: 16px;
+  }
+
+  .sobre-page {
+    padding: 80px 20px 20px 20px;
+  }
+
+  .sobre-page h1 {
+    font-size: 32px;
+  }
+
+  .sobre-page p {
+    font-size: 16px;
+  }
+}
+.socios-landing {
+  padding: 100px 60px;
+  background: linear-gradient(180deg, #000, #111);
+  color: #fff;
+  text-align: center;
+}
+
+.socios-landing .socios-header h2 {
+  font-size: 42px;
+  color: #9b59b6;
+  margin-bottom: 15px;
+}
+
+.socios-landing .socios-header p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 60px;
+}
+
+.socios-cards-landing {
+  display: flex;
+  justify-content: center;
+  gap: 165px;
+  flex-wrap: wrap;
+}
+
+.socio-card-landing {
+  background-color: #1a1a1a;
+  padding: 30px 20px;
+  border-radius: 15px;
+  width: 260px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.socio-card-landing img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #9b59b6;
+}
+
+.socio-card-landing h3 {
+  font-size: 22px;
+  color: #9b59b6;
+  margin-bottom: 10px;
+}
+
+.socio-card-landing p {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.socio-card-landing:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+}
+@media (max-width: 768px) {
+  .socios-cards-landing {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .socio-card-landing {
+    width: 80%;
+  }
+}
+.video-section {
+  text-align: center;
+  padding: 80px 60px;
+  background-color: #111;
+  color: #fff;
+}
+
+.video-section h2 {
+  font-size: 36px;
+  color: #9b59b6;
+  margin-bottom: 40px;
+}
+
+.video-section video {
+  width: 80%;       /* tamanho do vídeo */
+  max-width: 800px; /* tamanho máximo */
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+@media (max-width: 768px) {
+  .video-section h2 {
+    font-size: 28px;
+  }
+
+  .video-section video {
+    width: 95%; /* ocupa quase toda a largura do celular */
+  }
+}
+
