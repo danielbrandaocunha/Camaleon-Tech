@@ -1,209 +1,235 @@
-/* Fundo geral */
-body {
+/* ===== RESET ===== */
+* {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
-  display: flex;
-  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-/* Menu lateral */
-/* Menu superior centralizado */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #000, #0a0a0a);
+  color: #f5f5f5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== MENU ===== */
 .topbar {
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background: transparent;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
   z-index: 1000;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .topbar ul {
   display: flex;
-  gap: 40px; /* espaço entre os botões */
+  justify-content: center;
+  gap: 50px;
   list-style: none;
   padding: 20px 0;
-  margin: 0;
 }
 
 .topbar ul li a {
-  color: #fff; /* cor branca */
+  color: #f5f5f5;
   text-decoration: none;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: relative;
   transition: color 0.3s;
 }
 
-.topbar ul li a:hover {
-  color: #9b59b6; /* efeito hover opcional */
+.topbar ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(90deg, #ffffff, #fff1b0);
+  transition: width 0.3s ease-in-out;
 }
 
-/* Conteúdo principal */
+.topbar ul li a:hover {
+  color: #d4af37;
+}
+
+.topbar ul li a:hover::after {
+  width: 100%;
+}
+
+/* ===== HERO HOME ===== */
 main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 60px;
+  padding: 140px 80px 60px 80px;
   width: 100%;
+  gap: 60px;
 }
 
-/* Texto da esquerda */
 .content {
   max-width: 500px;
+  animation: fadeInLeft 1s ease;
 }
 
 .brand {
-  font-size: 20px;
-  letter-spacing: 3px;
-  color: #9b59b6;
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: #d4af37;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
 }
 
 h1 {
-  font-size: 50px;
-  margin: 20px 0;
+  font-size: 58px;
+  margin: 25px 0;
+  line-height: 1.2;
+  font-family: "Playfair Display", serif;
+  color: #fff;
 }
 
 p {
-  font-size: 16px;
-  color: #ccc;
-  margin-bottom: 30px;
+  font-size: 18px;
+  color: #bbb;
+  margin-bottom: 35px;
+  line-height: 1.6;
 }
 
 .btn {
   display: inline-block;
-  padding: 12px 30px;
-  border: 1px solid #fff;
+  padding: 14px 38px;
+  border: 2px solid #d4af37;
+  background: transparent;
   color: #fff;
   text-decoration: none;
   font-size: 16px;
-  border-radius: 5px;
+  font-weight: bold;
+  border-radius: 30px;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background: #fff;
+  background: linear-gradient(90deg, #d4af37, #fff1b0);
   color: #000;
+  box-shadow: 0 0 20px rgba(212,175,55,0.6);
 }
 
-/* Carro */
+/* ===== CARRO ===== */
 .car-container {
   text-align: center;
   max-width: 600px;
+  animation: fadeInRight 1s ease;
 }
 
 .car-container img {
   width: 100%;
-  border-radius: 10px;
-  transition: 0.3s ease;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+  transition: transform 0.4s;
+}
+
+.car-container img:hover {
+  transform: scale(1.05);
 }
 
 .buttons {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .buttons button {
-  padding: 15px 30px;   /* Aumenta altura e largura do botão */
+  padding: 15px 35px;
   margin: 12px;
-  margin-top: -50px;
   border: none;
-  border-radius: 8px;   /* Bordas levemente maiores */
-  background: linear-gradient(90deg, #3a9bdc, #9a3adc);
-  color: white;
-  font-size: 18px;      /* Texto maior */
-  font-weight: bold;    /* Texto mais destacado */
+  border-radius: 50px;
+  background: linear-gradient(90deg, #d4af37, #fff1b0);
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all 0.3s;
 }
 
 .buttons button:hover {
   transform: scale(1.1);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* efeito hover mais elegante */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 
-.sobre-page {
+/* ===== HERO SOBRE ===== */
+.sobre-hero {
+  position: relative;
+  background: url('assets/carro-luxo.jpg') center/cover no-repeat;
+  height: 85vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background-color: #000;
-  color: #fff;
-  padding: 60px;
   text-align: center;
 }
 
-.sobre-page h1 {
-  font-size: 40px;
-  color: #9b59b6;
-  margin-bottom: 30px;
+.sobre-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6), #000);
 }
 
-.sobre-page p {
-  font-size: 18px;
+.sobre-hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 800px;
-  margin: 10px 0;
-  color: #ccc;
+  padding: 0 20px;
+  animation: fadeInUp 1.5s ease;
+}
+
+.sobre-hero-content h1 {
+  font-size: 64px;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  background: linear-gradient(90deg, #d4af37, #fff1b0, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  animation: gradientMove 5s infinite linear;
+}
+
+.sobre-hero-content p {
+  font-size: 22px;
+  color: #ddd;
   line-height: 1.6;
+  margin-top: 15px;
 }
 
-.sobre-page .btn {
-  margin-top: 30px;
+/* ===== SOBRE PAGE ===== */
+.sobre-page {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
 }
-/* Estilos para telas menores (celular) */
-@media (max-width: 768px) {
 
-  main {
-    flex-direction: column; /* Coloca a imagem do carro abaixo do texto */
-    padding: 60px 20px 20px 20px;
-  }
-
-  .content {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 32px; /* Ajusta tamanho do título */
-  }
-
-  p {
-    font-size: 14px;
-  }
-
-  .car-container {
-    max-width: 100%;
-    margin-top: 20px;
-  }
-
-  .buttons button {
-    padding: 12px 25px; /* Ajusta tamanho dos botões no celular */
-    font-size: 16px;
-    margin: 8px;
-  }
-
-  .topbar ul {
-    gap: 20px; /* diminui espaço entre os botões do menu */
-    padding: 15px 0;
-  }
-
-  .topbar ul li a {
-    font-size: 16px;
-  }
-
-  .sobre-page {
-    padding: 80px 20px 20px 20px;
-  }
-
-  .sobre-page h1 {
-    font-size: 32px;
-  }
-
-  .sobre-page p {
-    font-size: 16px;
-  }
+.sobre-content {
+  max-width: 900px;
+  text-align: center;
 }
+
+.sobre-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-family: "Playfair Display", serif;
+  color: #d4af37;
+}
+
+.sobre-content p {
+  font-size: 18px;
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* ===== SÓCIOS ===== */
 .socios-landing {
   padding: 100px 60px;
   background: linear-gradient(180deg, #000, #111);
@@ -213,7 +239,7 @@ p {
 
 .socios-landing .socios-header h2 {
   font-size: 42px;
-  color: #9b59b6;
+  color: #d4af37;
   margin-bottom: 15px;
 }
 
@@ -226,17 +252,18 @@ p {
 .socios-cards-landing {
   display: flex;
   justify-content: center;
-  gap: 165px;
+  gap: 60px;
   flex-wrap: wrap;
 }
 
 .socio-card-landing {
   background-color: #1a1a1a;
-  padding: 30px 20px;
-  border-radius: 15px;
-  width: 260px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  padding: 40px 30px;
+  border-radius: 20px;
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
   transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
 }
 
 .socio-card-landing img {
@@ -245,12 +272,12 @@ p {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
-  border: 3px solid #9b59b6;
+  border: 3px solid #d4af37;
 }
 
 .socio-card-landing h3 {
   font-size: 22px;
-  color: #9b59b6;
+  color: #d4af37;
   margin-bottom: 10px;
 }
 
@@ -264,7 +291,79 @@ p {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0,0,0,0.7);
 }
+
+/* ===== VÍDEO ===== */
+.video-section {
+  text-align: center;
+  padding: 100px 60px;
+  background-color: #111;
+  color: #fff;
+}
+
+.video-section h2 {
+  font-size: 38px;
+  color: #d4af37;
+  margin-bottom: 45px;
+  font-family: "Playfair Display", serif;
+}
+
+.video-section video {
+  width: 80%;
+  max-width: 900px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+/* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding: 100px 20px 20px 20px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  .btn {
+    padding: 12px 28px;
+    font-size: 15px;
+  }
+
+  .car-container {
+    max-width: 100%;
+  }
+
+  .video-section h2 {
+    font-size: 28px;
+  }
+
+  .video-section video {
+    width: 95%;
+  }
+
   .socios-cards-landing {
     flex-direction: column;
     align-items: center;
@@ -274,33 +373,25 @@ p {
   .socio-card-landing {
     width: 80%;
   }
+
+  .sobre-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .sobre-hero-content p {
+    font-size: 16px;
+  }
 }
-.video-section {
+/* Botão da página Sócios */
+.socios-content .btn {
+  margin-top: 60px; /* aumenta o espaço acima do botão */
+}
+.socios-content {
   text-align: center;
-  padding: 80px 60px;
-  background-color: #111;
-  color: #fff;
 }
 
-.video-section h2 {
-  font-size: 36px;
-  color: #9b59b6;
-  margin-bottom: 40px;
-}
-
-.video-section video {
-  width: 80%;       /* tamanho do vídeo */
-  max-width: 800px; /* tamanho máximo */
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-}
-@media (max-width: 768px) {
-  .video-section h2 {
-    font-size: 28px;
-  }
-
-  .video-section video {
-    width: 95%; /* ocupa quase toda a largura do celular */
-  }
+.socios-content .btn {
+  margin-top: 60px;
+  display: inline-block;
 }
 
