@@ -473,3 +473,417 @@ p {
   display: inline-block;
 }
 
+/* ===== HERO VENDA ===== */
+.venda-hero {
+  position: relative;
+  background: url("Assets/carro-luxo.jpg") center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.venda-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.venda-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeInUp 1.5s ease;
+}
+
+.venda-hero-content h1 {
+  font-size: 58px;
+  font-family: "Playfair Display", serif;
+  background: linear-gradient(90deg, #d4af37, #fff1b0, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.venda-hero-content p {
+  font-size: 22px;
+  color: #ddd;
+  margin: 20px 0 40px;
+  line-height: 1.6;
+}
+
+/* ===== BENEFÍCIOS ===== */
+.beneficios {
+  text-align: center;
+  padding: 100px 40px;
+  background: #0a0a0a;
+}
+
+.beneficios h2 {
+  font-size: 42px;
+  color: #d4af37;
+  margin-bottom: 60px;
+  font-family: "Playfair Display", serif;
+}
+
+.beneficios-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.beneficio-card {
+  background: #111;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 18px;
+  padding: 40px 30px;
+  width: 300px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+  transition: all 0.3s ease;
+}
+
+.beneficio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+}
+
+.beneficio-card h3 {
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.beneficio-card p {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* ===== OFERTA ===== */
+.oferta {
+  text-align: center;
+  padding: 120px 40px;
+  background: linear-gradient(180deg, #111, #000);
+}
+
+.oferta h2 {
+  font-size: 40px;
+  color: #d4af37;
+  margin-bottom: 25px;
+  font-family: "Playfair Display", serif;
+}
+
+.oferta p {
+  font-size: 20px;
+  color: #ddd;
+  margin-bottom: 35px;
+}
+
+.oferta .destaque {
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/* ===== HERO CHECKOUT ===== */
+.checkout-hero {
+  text-align: center;
+  padding: 150px 20px 80px;
+  background: linear-gradient(180deg, #000, #111);
+}
+
+.checkout-hero h1 {
+  font-size: 50px;
+  font-family: "Playfair Display", serif;
+  background: linear-gradient(90deg, #d4af37, #fff1b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.checkout-hero p {
+  font-size: 20px;
+  color: #ccc;
+  margin-top: 15px;
+}
+
+/* ===== PRODUTO CHECKOUT ===== */
+.produto-checkout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 80px 40px;
+  flex-wrap: wrap;
+}
+
+.produto-imagem img {
+  width: 450px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+}
+
+.produto-info {
+  max-width: 500px;
+}
+
+.produto-info h2 {
+  font-size: 32px;
+  color: #d4af37;
+  margin-bottom: 15px;
+}
+
+.produto-info .descricao {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+.produto-info .preco {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.produto-info label {
+  display: block;
+  margin-bottom: 10px;
+  color: #ccc;
+  font-size: 16px;
+}
+
+.produto-info input {
+  width: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #555;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.botoes-compra {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.botoes-compra .btn {
+  text-align: center;
+  padding: 15px;
+  border-radius: 35px;
+  font-weight: bold;
+}
+
+/* BOTÕES DE DESTAQUE */
+.btn.destaque {
+  background: linear-gradient(90deg, #d4af37, #fff1b0);
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(212,175,55,0.4);
+}
+
+.btn.whatsapp {
+  background: #25d366;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+}
+
+.btn.whatsapp:hover {
+  background: #1ebe5d;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(37,211,102,0.6);
+}
+
+/* GARANTIA */
+.garantia {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 15px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.garantia p {
+  margin-bottom: 8px;
+  color: #ccc;
+}
+
+.garantia p::before {
+  content: "✔ ";
+  color: #d4af37;
+  font-weight: bold;
+}
+/* ===== RESPONSIVO PREMIUM ===== */
+@media (max-width: 1024px) {
+  .produto-checkout {
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+  }
+
+  .produto-imagem img {
+    width: 90%;
+  }
+
+  .produto-info {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .produto-info h2 {
+    font-size: 28px;
+  }
+
+  .produto-info .descricao {
+    font-size: 16px;
+  }
+
+  .produto-info .preco {
+    font-size: 26px;
+  }
+
+  .botoes-compra {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .botoes-compra .btn {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 16px;
+  }
+
+  .garantia {
+    font-size: 15px;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout-hero h1 {
+    font-size: 36px;
+  }
+
+  .checkout-hero p {
+    font-size: 16px;
+  }
+
+  .beneficios h2 {
+    font-size: 32px;
+  }
+
+  .beneficio-card {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .beneficio-card h3 {
+    font-size: 20px;
+  }
+
+  .beneficio-card p {
+    font-size: 15px;
+  }
+
+  .oferta h2 {
+    font-size: 30px;
+  }
+
+  .oferta p {
+    font-size: 18px;
+  }
+
+  .oferta .btn.destaque {
+    width: 80%;
+    font-size: 16px;
+    padding: 14px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkout-hero {
+    padding: 100px 15px 60px;
+  }
+
+  .produto-info h2 {
+    font-size: 24px;
+  }
+
+  .produto-info .descricao {
+    font-size: 14px;
+  }
+
+  .produto-info .preco {
+    font-size: 22px;
+  }
+
+  .botoes-compra .btn {
+    font-size: 15px;
+    padding: 12px 0;
+  }
+
+  .garantia {
+    font-size: 14px;
+  }
+
+  .beneficio-card {
+    padding: 25px 15px;
+  }
+
+  .beneficio-card h3 {
+    font-size: 18px;
+  }
+
+  .beneficio-card p {
+    font-size: 14px;
+  }
+
+  .oferta h2 {
+    font-size: 26px;
+  }
+
+  .oferta p {
+    font-size: 16px;
+  }
+
+  .oferta .btn.destaque {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+/* ===== PREÇO PREMIUM ===== */
+.produto-info .preco {
+  font-size: 36px;           /* maior destaque */
+  font-weight: 800;           /* mais impacto */
+  color: #d4af37;             /* dourado luxuoso */
+  text-shadow: 0 0 12px rgba(212,175,55,0.8);
+  margin-bottom: 30px;
+  font-family: "Playfair Display", serif;
+}
+
+/* ===== QUANTIDADE PREMIUM ===== */
+.produto-info input#quantidade {
+  width: 100px;
+  padding: 12px 0;
+  border-radius: 25px;
+  border: 2px solid #d4af37;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(212,175,55,0.5);
+  transition: all 0.3s ease;
+}
+
+.produto-info input#quantidade:focus {
+  outline: none;
+  border-color: #fff1b0;
+  box-shadow: 0 0 25px rgba(212,175,55,0.7);
+}
