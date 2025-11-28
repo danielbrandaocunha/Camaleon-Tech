@@ -1,45 +1,74 @@
 <!DOCTYPE html>
- <html lang="pt-BR"> 
-    <head> <meta charset="UTF-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <title>Camaleon Tech</title> <link rel="stylesheet" href="style.css">
-         <link rel="website icon" type="png"
-         href="Assets/WhatsApp Image 2025-08-29 at 10.55.00.jpeg"
-          <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-         </head> 
-         <body>
-             <!-- Menu superior --> 
-            <nav class="topbar">
-                 <ul> <li><a href="#">Home</a></li>
-                     <li><a href="sobre.html">Sobre</a></li>
-                      <li><a href="Sócios.html">Sócios</a></li>
-                      <li><a href="Vendas.html" class="active">Reservar</a></li>
-                     </ul> 
-                    </nav> 
-                    <!-- Hero principal -->
-                      <main>
-                         <div class="content">
-                             <h2 class="brand">CAMALEON TECH</h2>
-                              <h1>Seu carro,<br>suas cores</h1> 
-                              <p> A película inteligente que transforma seu carro em uma verdadeira obra de arte, com um simples clique. </p>
-                               <a href="https://wa.me/5511912824212" class="btn" target="_blank">Fale conosco</a>
-                             </div> 
-                             <div class="car-container"> 
-                                <img id="car-image" src="Assets/Ferrari Azul.png" alt="Carro Camaleon">
-                                 <div class="buttons"> 
-                                    <button onclick="changeCar('Assets/Ferrari Azul.png')">Azul</button>
-                                     <button onclick="changeCar('Assets/Ferrari Verde.png')">Verde</button> 
-                                     <button onclick="changeCar('Assets/Ferrari Vermelha.png')">Vermelho</button> 
-                                    </div> 
-                                </div>
-                             </main>
-                              <!-- Seção vídeo -->
-                                <section class="video-section">
-                                     <h2>Veja a Camaleon Tech em ação</h2> 
-                                     <video controls> <source src="Assets/Video.mp4" type="video/mp4">
-                                         Seu navegador não suporta vídeo. </video>
-                                         </section>
-                                          <script src="script.js">
-                                          </script> 
-                                          </body> 
-                                          </html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camaleon Tech | Inovação e Estilo Automotivo</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="Assets/WhatsApp Image 2025-08-29 at 10.55.00.jpeg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="topbar">
+      <nav>
+        <div class="logo">Camaleon <span>Tech</span></div>
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="Sócios.html">Sócios</a></li>
+          <li><a href="aplicativo.html">Aplicativo</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero">
+        <div class="content">
+          <h1 class="lux-title">Seu carro, sua identidade.</h1>
+          <p>
+            A <strong>Camaleon Tech</strong> apresenta a nova era da personalização automotiva. 
+            Películas inteligentes de alto desempenho, desenvolvidas com tecnologia de ponta, 
+            para quem exige exclusividade, estilo e inovação.
+          </p>
+          <a href="https://wa.me/5511912824212" target="_blank" class="btn lux-btn">Solicitar demonstração</a>
+        </div>
+
+        <div class="car-container">
+          <div class="car-frame glow-frame">
+            <img id="car-image" src="Assets/Ferrari Azul.png" alt="Carro Camaleon" />
+          </div>
+          <div class="buttons">
+            <button onclick="changeCar('Assets/Ferrari Azul.png')">Azul</button>
+            <button onclick="changeCar('Assets/Ferrari Verde.png')">Verde</button>
+            <button onclick="changeCar('Assets/Ferrari Vermelha.png')">Vermelho</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- VÍDEO -->
+    <section class="video-section">
+      <h2>Experimente a transformação</h2>
+      <div class="video-frame">
+        <video controls>
+          <source src="Assets/Video.mp4" type="video/mp4" />
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2025 Camaleon Tech | Tecnologia e Estilo em Movimento</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

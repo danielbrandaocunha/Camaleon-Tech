@@ -5,190 +5,213 @@
   box-sizing: border-box;
 }
 
+/* ===== BASE ===== */
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(180deg, #000, #0a0a0a);
+  background: radial-gradient(circle at top, #0b0b0b 0%, #000 90%);
   color: #f5f5f5;
-  min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* ===== MENU ===== */
+h1, h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+
+/* ===== NAVBAR ===== */
 .topbar {
   position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
+  top: 0;
+  z-index: 999;
   background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(14px);
-  z-index: 1000;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 18px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topbar nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: #d4af37;
 }
 
 .topbar ul {
   display: flex;
-  justify-content: center;
   gap: 60px;
   list-style: none;
-  padding: 22px 0;
 }
 
-.topbar ul li a {
-  color: #f5f5f5;
+.topbar a {
+  color: #f0f0f0;
   text-decoration: none;
-  font-size: 19px;
   font-weight: 500;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.5px;
+  font-size: 17px;
   position: relative;
   transition: all 0.3s ease;
 }
 
-.topbar ul li a::after {
+.topbar a::after {
   content: "";
   position: absolute;
+  bottom: -5px;
+  left: 0;
   width: 0%;
   height: 2px;
-  bottom: -6px;
-  left: 0;
   background: linear-gradient(90deg, #d4af37, #fff1b0);
-  transition: width 0.3s ease-in-out;
+  transition: width 0.4s ease;
 }
 
-.topbar ul li a:hover {
+.topbar a:hover,
+.topbar a.active {
   color: #d4af37;
-  text-shadow: 0 0 8px rgba(212,175,55,0.6);
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
 }
 
-.topbar ul li a:hover::after {
+.topbar a:hover::after,
+.topbar a.active::after {
   width: 100%;
 }
 
-/* ===== HERO HOME ===== */
-main {
+/* ===== HERO ===== */
+.hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 160px 80px 80px 80px;
-  width: 100%;
-  gap: 70px;
+  padding: 160px 100px 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 100px;
 }
 
 .content {
-  max-width: 500px;
-  animation: fadeInLeft 1s ease;
+  max-width: 550px;
+  animation: fadeUp 1.2s ease;
 }
 
-.brand {
-  font-size: 24px;
-  letter-spacing: 5px;
-  color: #d4af37;
-  text-transform: uppercase;
-  font-family: "Playfair Display", serif;
-}
-
-h1 {
+.hero h1 {
   font-size: 64px;
-  margin: 28px 0;
   line-height: 1.2;
-  font-family: "Playfair Display", serif;
-  background: linear-gradient(90deg, #d4af37, #fff1b0, #d4af37);
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, #d4af37, #fff4cc, #d4af37);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-size: 200%;
-  animation: gradientMove 6s infinite linear;
+  animation: gradientMove 8s linear infinite;
 }
 
-p {
-  font-size: 19px;
+.hero p {
   color: #ccc;
-  margin-bottom: 40px;
-  line-height: 1.7;
+  font-size: 19px;
+  line-height: 1.8;
+  margin-bottom: 50px;
 }
 
-/* ===== BOTÕES ===== */
 .btn {
   display: inline-block;
-  padding: 16px 42px;
+  padding: 16px 48px;
+  border-radius: 40px;
   border: 2px solid #d4af37;
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(6px);
   color: #fff;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 17px;
-  font-weight: bold;
-  border-radius: 35px;
+  letter-spacing: 1px;
   transition: all 0.4s ease;
 }
 
 .btn:hover {
   background: linear-gradient(90deg, #d4af37, #fff1b0);
   color: #000;
-  box-shadow: 0 0 28px rgba(212,175,55,0.7);
-  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
+  transform: translateY(-3px);
 }
 
-/* ===== CARRO ===== */
+/* ===== CAR ===== */
 .car-container {
   text-align: center;
-  max-width: 600px;
-  animation: fadeInRight 1s ease;
+  animation: fadeIn 1.5s ease;
+}
+
+.car-frame {
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8),
+    0 0 25px rgba(212, 175, 55, 0.15);
+  background: linear-gradient(180deg, #111, #000);
+  padding: 10px;
 }
 
 .car-container img {
   width: 100%;
-  border-radius: 22px;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.8);
-  transition: transform 0.5s ease;
+  border-radius: 18px;
+  transition: transform 0.8s ease;
 }
 
 .car-container img:hover {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 
 .buttons {
-  margin-top: 45px;
+  margin-top: 40px;
 }
 
 .buttons button {
-  padding: 15px 38px;
-  margin: 12px;
-  border: none;
-  border-radius: 50px;
   background: linear-gradient(90deg, #d4af37, #fff1b0);
   color: #000;
-  font-size: 16px;
-  font-weight: bold;
+  border: none;
+  padding: 14px 38px;
+  margin: 0 10px;
+  border-radius: 50px;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.35s;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
 }
 
 .buttons button:hover {
-  transform: scale(1.12);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
 }
 
-/* ===== VÍDEO ===== */
+/* ===== VIDEO ===== */
 .video-section {
   text-align: center;
-  padding: 120px 60px;
-  background-color: #111;
-  color: #fff;
+  background: #0c0c0c;
+  padding: 140px 50px;
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 .video-section h2 {
-  font-size: 42px;
+  font-size: 46px;
   color: #d4af37;
-  margin-bottom: 55px;
-  font-family: "Playfair Display", serif;
+  margin-bottom: 60px;
 }
 
 .video-section video {
   width: 80%;
   max-width: 950px;
-  border-radius: 18px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.7),
-              0 0 20px rgba(212,175,55,0.3);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8),
+    0 0 25px rgba(212, 175, 55, 0.3);
   transition: transform 0.4s ease;
 }
 
@@ -196,27 +219,198 @@ p {
   transform: scale(1.02);
 }
 
-/* ===== ANIMAÇÕES ===== */
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-50px); }
-  to { opacity: 1; transform: translateX(0); }
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 35px;
+  background: #000;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  font-size: 15px;
+  color: #bbb;
+  letter-spacing: 0.5px;
 }
 
-@keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(50px); }
-  to { opacity: 1; transform: translateX(0); }
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes gradientMove {
-  0% { background-position: 0% }
-  100% { background-position: 200% }
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
 }
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 980px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 140px 30px 100px;
+  }
+
+  .topbar {
+    padding: 16px 40px;
+  }
+
+  .topbar ul {
+    gap: 30px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+}
+/* ===== EFEITOS LUXUOSOS ===== */
+.lux-title {
+  position: relative;
+  background: linear-gradient(90deg, #d4af37, #fff4cc, #b8860b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300%;
+  animation: goldenShine 6s linear infinite;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.glow-frame {
+  position: relative;
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.15), inset 0 0 10px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.lux-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.lux-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-25deg);
+  transition: 0.7s;
+}
+
+.lux-btn:hover::before {
+  left: 125%;
+}
+
+.video-frame {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 25px;
+  background: radial-gradient(circle at top left, rgba(212,175,55,0.1), rgba(0,0,0,0.9));
+  box-shadow: 0 0 40px rgba(212,175,55,0.2), inset 0 0 20px rgba(255,255,255,0.05);
+}
+
+@keyframes goldenShine {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/*====== SOBRE =====*/
+/* ===== NAVBAR ===== */
+.topbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 18px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topbar nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: #d4af37;
+}
+
+.topbar ul {
+  display: flex;
+  gap: 60px;
+  list-style: none;
+}
+
+.topbar a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: 17px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.topbar a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #d4af37, #fff1b0);
+  transition: width 0.4s ease;
+}
+
+.topbar a:hover,
+.topbar a.active {
+  color: #d4af37;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+.topbar a:hover::after,
+.topbar a.active::after {
+  width: 100%;
+}
+
 
 /* ===== HERO SOBRE ===== */
 .sobre-hero {
   position: relative;
   background: url('assets/carro-luxo.jpg') center/cover no-repeat;
-  height: 85vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -226,7 +420,7 @@ p {
 .sobre-hero .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.6), #000);
+  background: linear-gradient(180deg, rgba(0,0,0,0.75), rgba(0,0,0,0.9));
 }
 
 .sobre-hero-content {
@@ -238,28 +432,30 @@ p {
 }
 
 .sobre-hero-content h1 {
-  font-size: 64px;
+  font-size: 60px;
   font-family: "Playfair Display", serif;
   font-weight: 700;
-  background: linear-gradient(90deg, #d4af37, #fff1b0, #d4af37);
+  background: linear-gradient(90deg, #d4af37, #fff2b3, #b8860b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200%;
-  animation: gradientMove 5s infinite linear;
+  animation: gradientMove 6s infinite linear;
+  letter-spacing: 1px;
 }
 
 .sobre-hero-content p {
-  font-size: 22px;
+  font-size: 20px;
   color: #ddd;
+  margin-top: 20px;
   line-height: 1.6;
-  margin-top: 15px;
 }
 
 /* ===== SOBRE PAGE ===== */
 .sobre-page {
   display: flex;
   justify-content: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
+  background: #0e0e0e;
 }
 
 .sobre-content {
@@ -268,126 +464,221 @@ p {
 }
 
 .sobre-content h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  font-family: "Playfair Display", serif;
+  font-size: 38px;
   color: #d4af37;
+  margin-bottom: 30px;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
 }
 
 .sobre-content p {
   font-size: 18px;
-  color: #ccc;
+  color: #cfcfcf;
   line-height: 1.8;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
+
+.quote-section {
+  margin: 50px 0;
+  border-left: 3px solid #d4af37;
+  padding-left: 25px;
+}
+
+.quote-section blockquote {
+  font-style: italic;
+  color: #f2f2f2;
+  font-size: 20px;
+  font-family: "Playfair Display", serif;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #000;
+  text-align: center;
+  padding: 30px 0;
+  color: #999;
+  font-size: 14px;
+  border-top: 1px solid #1a1a1a;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #d4af37, #b8860b);
+  color: #000;
+  font-weight: 600;
+  padding: 12px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #b8860b, #d4af37);
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes gradientMove {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 
 /* ===== SÓCIOS ===== */
 /* ===== HEADER SÓCIOS ===== */
+/* ===== SÓCIOS PREMIUM ===== */
 .socios-landing {
-  padding: 120px 60px;
-  background: linear-gradient(180deg, #000, #0a0a0a 60%, #111);
+  padding: 160px 60px 120px;
+  background: radial-gradient(circle at top center, #0b0b0b 0%, #000 90%);
   color: #fff;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.socios-landing .socios-header h2 {
-  font-size: 48px;
+.socios-landing::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("Assets/pattern-luxury-gold.png") repeat;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.socios-header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 100px;
+  animation: fadeInUp 1.2s ease;
+}
+
+.socios-header h2 {
+  font-size: 56px;
   font-family: "Playfair Display", serif;
-  font-weight: 700;
-  margin-bottom: 20px;
-  background: linear-gradient(90deg, #d4af37, #fff1b0, #d4af37);
+  background: linear-gradient(90deg, #d4af37, #fcefb0, #b8860b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-size: 200%;
-  animation: gradientMove 5s infinite linear;
+  animation: gradientMove 6s infinite linear;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-.socios-landing .socios-header p {
+.socios-header p {
   font-size: 20px;
-  color: #bbb;
-  margin-bottom: 70px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  color: #bfbfbf;
+  margin-top: 25px;
+  max-width: 750px;
+  margin-inline: auto;
   line-height: 1.8;
+  font-style: italic;
 }
 
 /* ===== CARDS ===== */
 .socios-cards-landing {
   display: flex;
   justify-content: center;
-  gap: 50px;
   flex-wrap: wrap;
+  gap: 60px;
+  z-index: 2;
+  position: relative;
 }
 
 .socio-card-landing {
-  background: #111;
-  padding: 45px 35px;
-  border-radius: 22px;
-  width: 300px;
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.7);
-  transition: all 0.4s ease;
-  text-align: center;
   position: relative;
+  width: 320px;
+  padding: 60px 35px;
+  background: rgba(17, 17, 17, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+  transition: all 0.5s ease;
   overflow: hidden;
 }
 
-.socio-card-landing::before {
+.socio-card-landing::after {
   content: "";
   position: absolute;
-  top: -150%;
-  left: -150%;
-  width: 400%;
-  height: 400%;
-  background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%);
-  transition: 0.6s;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(212, 175, 55, 0.05), transparent);
+  opacity: 0;
+  transition: 0.4s ease;
 }
 
-.socio-card-landing:hover::before {
-  top: -50%;
-  left: -50%;
+.socio-card-landing:hover::after {
+  opacity: 1;
 }
 
 .socio-card-landing h3 {
-  font-size: 24px;
+  font-size: 26px;
   font-family: "Playfair Display", serif;
-  color: #d4af37;
-  margin-bottom: 12px;
+  color: #fff;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
 }
 
 .socio-card-landing p {
-  font-size: 16px;
-  color: #ccc;
-  line-height: 1.6;
+  font-size: 17px;
+  color: #cfcfcf;
+  line-height: 1.7;
 }
 
 .socio-card-landing:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 20px 45px rgba(212, 175, 55, 0.3);
+  border-color: rgba(212, 175, 55, 0.6);
+}
+
+/* brilho dourado suave */
+.socio-card-landing .socio-glow {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(212,175,55,0.1), transparent 70%);
+  opacity: 0;
+  transition: 0.8s ease;
+  pointer-events: none;
+}
+
+.socio-card-landing:hover .socio-glow {
+  opacity: 1;
+  transform: translate(20%, 20%);
 }
 
 /* ===== BOTÃO HOME ===== */
 .home-button-container {
-  margin-top: 80px;
+  margin-top: 100px;
+  position: relative;
+  z-index: 3;
 }
 
 .home-button-container .btn {
-  padding: 16px 42px;
-  font-size: 17px;
-  border-radius: 35px;
+  padding: 18px 48px;
+  font-size: 18px;
+  border-radius: 40px;
   border: 2px solid #d4af37;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.05);
   color: #fff;
   font-weight: bold;
-  transition: 0.3s;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
 }
 
 .home-button-container .btn:hover {
   background: linear-gradient(90deg, #d4af37, #fff1b0);
   color: #000;
-  box-shadow: 0 0 25px rgba(212,175,55,0.6);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
+  transform: translateY(-4px);
 }
+
 
 /* ===== VÍDEO ===== */
 
@@ -473,417 +764,266 @@ p {
   display: inline-block;
 }
 
-/* ===== HERO VENDA ===== */
-.venda-hero {
-  position: relative;
-  background: url("Assets/carro-luxo.jpg") center/cover no-repeat;
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ===== COLOR GEAR X ===== */
+.app-section {
+  background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+  color: #fff;
+  padding: 140px 60px 120px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.venda-hero .overlay {
+.app-section::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: radial-gradient(circle at center, rgba(212,175,55,0.1), transparent 70%);
+  opacity: 0.2;
 }
 
-.venda-hero-content {
+.app-header {
   position: relative;
+  z-index: 1;
+  margin-bottom: 90px;
+  animation: fadeInUp 1s ease;
+}
+
+.app-logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 25px;
+  border-radius: 50%;
+  border: 2px solid rgba(212,175,55,0.5);
+  box-shadow: 0 0 30px rgba(212,175,55,0.3);
+}
+
+.app-header h1 {
+  font-size: 60px;
+  font-family: "Playfair Display", serif;
+  background: linear-gradient(90deg, #d4af37, #fcefb0, #b8860b);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.app-header p {
+  font-size: 20px;
+  color: #cfcfcf;
+  margin-top: 20px;
+  max-width: 750px;
+  margin-inline: auto;
+  line-height: 1.7;
+}
+
+/* ===== Cards ===== */
+.app-showcase {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
   z-index: 2;
-  max-width: 800px;
-  padding: 0 20px;
-  animation: fadeInUp 1.5s ease;
+  position: relative;
 }
 
-.venda-hero-content h1 {
-  font-size: 58px;
-  font-family: "Playfair Display", serif;
-  background: linear-gradient(90deg, #d4af37, #fff1b0, #d4af37);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.app-card {
+  background: rgba(17, 17, 17, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 25px;
+  padding: 50px 35px;
+  max-width: 330px;
+  transition: all 0.5s ease;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
 }
 
-.venda-hero-content p {
-  font-size: 22px;
-  color: #ddd;
-  margin: 20px 0 40px;
-  line-height: 1.6;
-}
-
-/* ===== BENEFÍCIOS ===== */
-.beneficios {
-  text-align: center;
-  padding: 100px 40px;
-  background: #0a0a0a;
-}
-
-.beneficios h2 {
-  font-size: 42px;
-  color: #d4af37;
-  margin-bottom: 60px;
-  font-family: "Playfair Display", serif;
-}
-
-.beneficios-cards {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.beneficio-card {
-  background: #111;
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  border-radius: 18px;
-  padding: 40px 30px;
-  width: 300px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.6);
-  transition: all 0.3s ease;
-}
-
-.beneficio-card:hover {
+.app-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  border-color: rgba(212, 175, 55, 0.7);
+  box-shadow: 0 15px 40px rgba(212,175,55,0.2);
 }
 
-.beneficio-card h3 {
-  font-size: 22px;
-  color: #fff;
+.app-card h3 {
+  font-size: 24px;
+  font-family: "Playfair Display", serif;
   margin-bottom: 15px;
+  color: #fff;
 }
 
-.beneficio-card p {
-  font-size: 16px;
-  color: #ccc;
+.app-card p {
+  font-size: 17px;
+  color: #cfcfcf;
   line-height: 1.6;
 }
 
-/* ===== OFERTA ===== */
-.oferta {
-  text-align: center;
-  padding: 120px 40px;
-  background: linear-gradient(180deg, #111, #000);
+/* ===== Download Area ===== */
+.download-area {
+  margin-top: 100px;
+  position: relative;
 }
 
-.oferta h2 {
-  font-size: 40px;
-  color: #d4af37;
-  margin-bottom: 25px;
-  font-family: "Playfair Display", serif;
-}
-
-.oferta p {
-  font-size: 20px;
-  color: #ddd;
-  margin-bottom: 35px;
-}
-
-.oferta .destaque {
-  color: #d4af37;
-  font-weight: bold;
-  font-size: 22px;
-}
-
-/* ===== HERO CHECKOUT ===== */
-.checkout-hero {
-  text-align: center;
-  padding: 150px 20px 80px;
-  background: linear-gradient(180deg, #000, #111);
-}
-
-.checkout-hero h1 {
-  font-size: 50px;
-  font-family: "Playfair Display", serif;
-  background: linear-gradient(90deg, #d4af37, #fff1b0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.checkout-hero p {
-  font-size: 20px;
-  color: #ccc;
-  margin-top: 15px;
-}
-
-/* ===== PRODUTO CHECKOUT ===== */
-.produto-checkout {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 60px;
-  padding: 80px 40px;
-  flex-wrap: wrap;
-}
-
-.produto-imagem img {
-  width: 450px;
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-}
-
-.produto-info {
-  max-width: 500px;
-}
-
-.produto-info h2 {
-  font-size: 32px;
-  color: #d4af37;
-  margin-bottom: 15px;
-}
-
-.produto-info .descricao {
+.download-area .btn {
+  padding: 18px 48px;
   font-size: 18px;
-  color: #ccc;
-  margin-bottom: 25px;
-}
-
-.produto-info .preco {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  border-radius: 40px;
+  border: 2px solid #d4af37;
+  background: rgba(255, 255, 255, 0.05);
   color: #fff;
-}
-
-.produto-info label {
-  display: block;
-  margin-bottom: 10px;
-  color: #ccc;
-  font-size: 16px;
-}
-
-.produto-info input {
-  width: 80px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #555;
-  margin-bottom: 25px;
-  text-align: center;
-  font-size: 16px;
-}
-
-.botoes-compra {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.botoes-compra .btn {
-  text-align: center;
-  padding: 15px;
-  border-radius: 35px;
   font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
 }
 
-/* BOTÕES DE DESTAQUE */
-.btn.destaque {
+.download-area .btn:hover {
   background: linear-gradient(90deg, #d4af37, #fff1b0);
   color: #000;
-  font-weight: bold;
-  box-shadow: 0 0 20px rgba(212,175,55,0.4);
+  box-shadow: 0 0 30px rgba(212,175,55,0.7);
+  transform: translateY(-4px);
 }
 
-.btn.whatsapp {
-  background: #25d366;
-  color: #fff;
-  border: none;
-  font-weight: bold;
-}
-
-.btn.whatsapp:hover {
-  background: #1ebe5d;
-  color: #fff;
-  box-shadow: 0 0 20px rgba(37,211,102,0.6);
-}
-
-/* GARANTIA */
-.garantia {
-  margin-top: 30px;
-  padding: 20px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(212,175,55,0.3);
-  border-radius: 15px;
+.download-area p {
+  margin-top: 20px;
+  color: #bfbfbf;
   font-size: 16px;
-  line-height: 1.8;
+  font-style: italic;
 }
-
-.garantia p {
-  margin-bottom: 8px;
-  color: #ccc;
-}
-
-.garantia p::before {
-  content: "✔ ";
-  color: #d4af37;
-  font-weight: bold;
-}
-/* ===== RESPONSIVO PREMIUM ===== */
-@media (max-width: 1024px) {
-  .produto-checkout {
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 20px;
-  }
-
-  .produto-imagem img {
-    width: 90%;
-  }
-
-  .produto-info {
-    max-width: 90%;
-    text-align: center;
-  }
-
-  .produto-info h2 {
-    font-size: 28px;
-  }
-
-  .produto-info .descricao {
-    font-size: 16px;
-  }
-
-  .produto-info .preco {
-    font-size: 26px;
-  }
-
-  .botoes-compra {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .botoes-compra .btn {
-    width: 100%;
-    padding: 14px 0;
-    font-size: 16px;
-  }
-
-  .garantia {
-    font-size: 15px;
-    padding: 18px;
-  }
-}
-
-@media (max-width: 768px) {
-  .checkout-hero h1 {
-    font-size: 36px;
-  }
-
-  .checkout-hero p {
-    font-size: 16px;
-  }
-
-  .beneficios h2 {
-    font-size: 32px;
-  }
-
-  .beneficio-card {
-    width: 90%;
-    padding: 30px 20px;
-  }
-
-  .beneficio-card h3 {
-    font-size: 20px;
-  }
-
-  .beneficio-card p {
-    font-size: 15px;
-  }
-
-  .oferta h2 {
-    font-size: 30px;
-  }
-
-  .oferta p {
-    font-size: 18px;
-  }
-
-  .oferta .btn.destaque {
-    width: 80%;
-    font-size: 16px;
-    padding: 14px 0;
-  }
-}
-
+/* ===== AJUSTES RESPONSIVOS CELULAR ===== */
 @media (max-width: 480px) {
-  .checkout-hero {
-    padding: 100px 15px 60px;
-  }
 
-  .produto-info h2 {
-    font-size: 24px;
+  /* Topbar */
+  .topbar {
+    padding: 14px 20px;
   }
-
-  .produto-info .descricao {
+  .topbar ul {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .topbar a {
     font-size: 14px;
   }
-
-  .produto-info .preco {
+  .logo {
     font-size: 22px;
   }
 
-  .botoes-compra .btn {
-    font-size: 15px;
-    padding: 12px 0;
+  /* HERO */
+  .hero {
+    flex-direction: column;
+    padding: 120px 15px 60px;
+    gap: 40px;
   }
-
-  .garantia {
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+  .hero p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .btn {
+    padding: 12px 28px;
     font-size: 14px;
   }
 
-  .beneficio-card {
-    padding: 25px 15px;
+  /* CARRO */
+  .car-container {
+    width: 100%;
   }
-
-  .beneficio-card h3 {
-    font-size: 18px;
+  .car-frame {
+    padding: 5px;
   }
-
-  .beneficio-card p {
+  .buttons button {
+    padding: 10px 20px;
     font-size: 14px;
+    margin: 8px 5px;
   }
 
-  .oferta h2 {
+  /* VÍDEO */
+  .video-section {
+    padding: 80px 15px;
+  }
+  .video-section h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .video-section video {
+    width: 100%;
+  }
+
+  /* SOBRE HERO */
+  .sobre-hero {
+    height: 60vh;
+  }
+  .sobre-hero-content h1 {
     font-size: 26px;
   }
-
-  .oferta p {
-    font-size: 16px;
+  .sobre-hero-content p {
+    font-size: 14px;
   }
 
-  .oferta .btn.destaque {
-    width: 100%;
+  /* SOBRE CONTENT */
+  .sobre-content {
+    padding: 0 10px;
+  }
+  .sobre-content h2 {
+    font-size: 28px;
+  }
+  .sobre-content p, .quote-section blockquote {
     font-size: 15px;
   }
-}
-/* ===== PREÇO PREMIUM ===== */
-.produto-info .preco {
-  font-size: 36px;           /* maior destaque */
-  font-weight: 800;           /* mais impacto */
-  color: #d4af37;             /* dourado luxuoso */
-  text-shadow: 0 0 12px rgba(212,175,55,0.8);
-  margin-bottom: 30px;
-  font-family: "Playfair Display", serif;
-}
 
-/* ===== QUANTIDADE PREMIUM ===== */
-.produto-info input#quantidade {
-  width: 100px;
-  padding: 12px 0;
-  border-radius: 25px;
-  border: 2px solid #d4af37;
-  background: rgba(255,255,255,0.05);
-  color: #fff;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 600;
-  box-shadow: 0 0 15px rgba(212,175,55,0.5);
-  transition: all 0.3s ease;
-}
+  /* SÓCIOS CARDS */
+  .socios-cards-landing {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .socio-card-landing {
+    width: 90%;
+    padding: 40px 20px;
+  }
+  .socio-card-landing h3 {
+    font-size: 22px;
+  }
+  .socio-card-landing p {
+    font-size: 15px;
+  }
 
-.produto-info input#quantidade:focus {
-  outline: none;
-  border-color: #fff1b0;
-  box-shadow: 0 0 25px rgba(212,175,55,0.7);
+  /* APP SECTION */
+  .app-section {
+    padding: 100px 15px 60px;
+  }
+  .app-header h1 {
+    font-size: 28px;
+  }
+  .app-header p {
+    font-size: 14px;
+  }
+  .app-showcase {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .app-card {
+    width: 90%;
+    padding: 30px 20px;
+  }
+  .app-card h3 {
+    font-size: 20px;
+  }
+  .app-card p {
+    font-size: 14px;
+  }
+  .download-area .btn {
+    padding: 12px 28px;
+    font-size: 14px;
+  }
+  .download-area p {
+    font-size: 13px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 25px 10px;
+    font-size: 13px;
+  }
 }
